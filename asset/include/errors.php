@@ -1,4 +1,7 @@
 <?php
-print_r($errors);
+if (count($errors)) {
+	print_r($errors);
+} else ;
+
 unset($errors);
 ?>
