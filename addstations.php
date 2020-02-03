@@ -28,9 +28,9 @@ include 'asset/include/config.php'?>
 		<ul  class="list-group">
 			<li class="list-group-item"><a href="addtrains.php">Add Trains</a></li>
 			<li class="list-group-item"><a href="addstations.php">Add Stations</a></li>
+			<li class="list-group-item"><a href="addtimetables.php">Add Timetables</a></li>
 			<li class="list-group-item"><a href="managetrains.php">Manage Trains</a></li>
 			<li class="list-group-item"><a href="managestations.php">Manage Stations</a></li>
-			<li class="list-group-item"><a href="addtimetables.php">Add Timetables</a></li>
 			<li class="list-group-item"><a href="managetimetables.php">Manage Timetables</a></li>
 			<br>
 			<li class="list-group-item"><a href="logout.php">Logout</a></li>
@@ -42,7 +42,7 @@ include 'asset/include/config.php'?>
 			<br>
 			<input type="text" class="form-control" name="number" placeholder="Station Number" required>
 			<br>
-			<textarea rows="5" class="form-control" name="description" placeholder="Station Description">" "</textarea>
+			<textarea rows="5" class="form-control" name="description" placeholder="Station Description"></textarea>
 			<br>
 			<input type="submit" name="reg" value="Add Station!" class="btn btn-success btn-block btn-lg">
 		</form>

@@ -1,11 +1,14 @@
-<?php include 'asset/include/header.php'; 
-include 'asset/include/config.php'?>
+<?php
+include 'asset/include/header.php'; 
+include 'asset/include/config.php';
+include 'asset/include/additionals.php';
+?>
 <?php
 	session_start();
 	if(!isset($_SESSION['user_id'])) {
 		header("Location: index.php");
     } else if($_SESSION['type']==0) {
-    	header("Location: User_Dashboard.php");
+    	header("Location: user_dashboard.php");
     }
 ?>
 <div class="wrapper">

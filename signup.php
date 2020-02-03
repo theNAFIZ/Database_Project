@@ -55,7 +55,7 @@ if (isset($_POST['sub'])) {
 </div>
 	<div class="container col-md-4 box">
 		<div class="container logo">
-            <img src="asset/img/logo.svg">
+            <img class="logo" src="asset/img/logo.png">
         </div>
 		<form class="form-sign-in" method="POST" action="signup.php">
 			<h1 class="font-weight-normal text-white">Create Account</h1>

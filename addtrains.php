@@ -6,15 +6,18 @@ include 'asset/include/config.php'?>
 		header("Location: index.php");
     }
 	$name = $number = $description  = "";
-	$tickets = 0;
-
+	$tickets = $start = $end = 0;
+	$sqlStation = mysqli_query($conn, "SELECT * FROM stations ORDER BY station_name");
+    $sqlSta = mysqli_query($conn, "SELECT * FROM stations ORDER BY station_name");
 	if (isset($_POST["reg"])) {
 		$name = mysqli_real_escape_string($conn, $_POST['name']);
 		$number = mysqli_real_escape_string($conn, $_POST['number']);
 		$tickets = (is_numeric($_POST['tickets']) ? (int)$_POST['tickets'] : 0);
 		$description = mysqli_real_escape_string($conn, $_POST['description']);
+		$start = (is_numeric($_POST['from']) ? (int)$_POST['from'] : 0);
+		$end = (is_numeric($_POST['to']) ? (int)$_POST['to'] : 0);
 
-		$query = "INSERT INTO trains(train_name, train_number, tickets, description) values ('$name', '$number', '$tickets', '$description');";
+		$query = "INSERT INTO trains(train_name, train_number, tickets, description, start_station, end_station) values ('$name', '$number', '$tickets', '$description', '$start', '$end');";
 		$ok = mysqli_query($conn, $query);
 		if ($ok) {
 			echo "<div><p class='btn-success bottom'>SUCCESS</p></div>";
@@ -47,7 +50,30 @@ include 'asset/include/config.php'?>
 			<br>
 			<input type="text" class="form-control" name="tickets" placeholder="Tickets" required>
 			<br>
+			<select class="form-control" name="from">
+	        	<option selected disabled>Starting Station</option>
+	        	<?php
+	        	while ($resStation = mysqli_fetch_array($sqlStation)) {
+	        		echo "<option value='".$resStation["station_id"]."'>";
+	        		echo $resStation["station_name"];
+	        		echo "</option>";
+	        	}
+	        	?>
+	        </select>
+	        <br>
+	        <select class="form-control" name="to">
+	        	<option selected disabled>Ending Station</option>
+	        	<?php
+	        	while ($res = mysqli_fetch_array($sqlSta)) {
+	        		echo "<option value='".$res["station_id"]."'>";
+	        		echo $res["station_name"];
+	        		echo "</option>";
+	        	}
+	        	?>
+	        </select>
+	        <br>
 			<textarea rows="5" class="form-control" name="description" placeholder="Train Description"></textarea>
+			<br>
 			<input type="submit" name="reg" value="Add Train!" class="btn btn-success btn-block btn-lg">
 		</form>
 	</div>

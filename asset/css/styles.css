@@ -1,19 +1,21 @@
 body{
-    background-image: url("../img/Background.jpg");
-    background-size: auto;
-    opacity: 0.8;
+  background-image: url("../img/Background.jpg");
+  background-size: auto;
+  opacity: 0.8;
 }
 
 .logo {
-    width: 80px;
-    align-content: center;
-    margin-left: 39%;
+  width: 80px;
+  height: 80px;
+  align-content: center;
 }
 
 .box {
-    background: rgb(0,0,0);
-    padding: 15px;
-    border-radius: 20px;
+  margin: auto;
+  width: 50%;
+  background: rgb(0,0,0);
+  padding: 15px;
+  border-radius: 10px;
 }
 
 input[type=date] {

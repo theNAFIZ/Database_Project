@@ -42,7 +42,7 @@ include 'asset/include/config.php'; ?>
 </div>
     <div class="container col-md-4 box">
         <div class="container logo">
-            <img src="asset/img/logo.svg">
+            <img class="logo" src="asset/img/logo.png">
         </div>
         <h1 class="mb-3 font-weight-normal text-white">Login Form</h1>
         <form class="form-sign-in" action="index.php" method="POST">
